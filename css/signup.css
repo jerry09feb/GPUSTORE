@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+/* ĐÃ CHỈNH: Nền tối hiện đại pha sắc xanh lá NVIDIA nổi bật hơn */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0b0f0d 0%, #132215 50%, #0f1711 100%);
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background-color: rgba(11, 15, 13, 0.95);
+  box-shadow: 0 2px 15px rgba(118, 185, 0, 0.15); /* Ánh xanh nhẹ dưới thanh nav */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1f3322;
+}
+
+.logo a {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #76b900;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.navbar nav a:hover {
+  color: #76b900;
+}
+
+.btn-signup-nav {
+  background: #76b900;
+  color: #000000 !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(118, 185, 0, 0.4);
+  transition: opacity 0.2s ease, transform 0.1s ease !important;
+}
+
+.btn-signup-nav:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.signup-container {
+  background-color: #141c16; /* Khung form có sắc xanh đen đậm đặc trưng */
+  width: 100%;
+  max-width: 420px;
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(118, 185, 0, 0.08); /* Phát sáng nhẹ viền xanh */
+  border: 1px solid #213824;
+}
+
+.signup-form h2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.signup-form .subtitle {
+  color: #9ca3af;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #d1d5db;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #213824;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #0b0f0d;
+  transition: border-color 0.25s ease;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #76b900;
+  box-shadow: 0 0 0 3px rgba(118, 185, 0, 0.25);
+}
+
+.error-message {
+  color: #ff4757;
+  font-size: 13px;
+  margin-top: 6px;
+  display: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 13px;
+  background: #76b900;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(118, 185, 0, 0.4);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.signup-link a {
+  color: #76b900;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  width: 100%;
+  background-color: rgba(11, 15, 13, 0.95);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px 8%;
+  margin-top: auto;
+  border-top: 1px solid #1f3322;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.footer-links a {
+  margin-left: 15px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #76b900;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+    gap: 15px;
+  }
+  .navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .navbar nav a {
+    margin-left: 0;
+    font-size: 14px;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .footer-links a {
+    margin: 0 8px;
+  }
+}

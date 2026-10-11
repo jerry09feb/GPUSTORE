@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử GPU Huyền Thoại - GPUSTORE</title>
+    <!-- FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Tổng -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- CSS Riêng cho trang Lịch sử -->
+    <link rel="stylesheet" href="./css/thongke.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fa-solid fa-microchip"></i> GPU<span>STORE</span>
+            </a>
+            <div class="nav-icons">
+                <a href="./index.html" class="icon-btn" title="Trang chủ">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+
+                <a href="./sosanh.html" class="icon-btn" title="So sánh card đồ họa">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </a>
+
+                <a href="./thongke.html" class="icon-btn" title="Lịch sử GPU qua các năm">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+
+                <a href="./bottleneck.html" class="icon-btn" title="Kiểm tra nghẽn cổ chai & nguồn">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </a>
+
+                <a href="./about.html" class="icon-btn active" title="Giới thiệu về website">
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
+
+                <a href="./store.html" class="icon-btn" id="cartBtn" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="history-wrapper">
+            <h2 class="section-title" style="margin-bottom: 15px;">Thống Kê GPU Huyền Thoại Qua Từng Năm</h2>
+            <p class="history-subtitle">Khám phá những dòng card đồ họa đỉnh cao, định hình ngành công nghiệp game qua các thời kỳ.</p>
+            
+            <!-- THANH CHỌN NĂM -->
+            <div class="year-filter-container">
+                <label for="yearSelect"><i class="fa-solid fa-calendar-days"></i> Chọn năm phát hành:</label>
+                <select id="yearSelect" onchange="filterGPUByYear()">
+                    <!-- Dữ liệu năm sẽ được JS render tự động -->
+                </select>
+            </div>
+
+            <!-- DANH SÁCH CARD NỔI BẬT TRONG NĂM -->
+            <div id="historyResult" class="history-grid">
+                <!-- Nội dung kết quả render bằng JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về GPUSTORE</h4>
+                    <p>Hệ thống bán lẻ Card màn hình (VGA) và Linh kiện máy tính chính hãng, giá rẻ nhất thị trường.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 xxxx</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@gpustore.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 GPUSTORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="./js/thongke.js"></script>
+
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "tt4smAEgAD4iM_3HeQXkd",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="tt4smAEgAD4iM_3HeQXkd"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>

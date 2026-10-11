@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Nghẽn Cổ Chai & Nguồn GPU - GPUSTORE</title>
+    <!-- FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Tổng -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- CSS Riêng cho trang Công cụ -->
+    <link rel="stylesheet" href="./css/bottleneck.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fa-solid fa-microchip"></i> GPU<span>STORE</span>
+            </a>
+            <div class="nav-icons">
+                <a href="./index.html" class="icon-btn" title="Trang chủ">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+
+                <a href="./sosanh.html" class="icon-btn" title="So sánh card đồ họa">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </a>
+
+                <a href="./thongke.html" class="icon-btn" title="Lịch sử GPU qua các năm">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+
+                <a href="./bottleneck.html" class="icon-btn" title="Kiểm tra nghẽn cổ chai & nguồn">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </a>
+
+                <a href="./about.html" class="icon-btn active" title="Giới thiệu về website">
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
+
+                <a href="./store.html" class="icon-btn" id="cartBtn" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="tool-wrapper">
+            <h2 class="section-title" style="margin-bottom: 10px;">Trung Tâm Kiểm Tra Cổ Chai & Nguồn GPU</h2>
+            <p class="tool-subtitle">Đảm bảo CPU và bộ nguồn (PSU) của bạn tương thích hoàn hảo trước khi quyết định nâng cấp card đồ họa.</p>
+            
+            <!-- KHUNG LỰA CHỌN CPU & GPU -->
+            <div class="tool-grid-selectors">
+                <div class="tool-box">
+                    <h3><i class="fa-solid fa-cpu"></i> 1. Chọn CPU hiện tại của bạn</h3>
+                    <select id="cpuSelect">
+                        <option value="">-- Chọn dòng CPU --</option>
+                        <optgroup label="Intel Core">
+                            <option value="i3-12100">Intel Core i3-12100 / 13100</option>
+                            <option value="i5-12400">Intel Core i5-12400F / 13400F</option>
+                            <option value="i5-13600">Intel Core i5-13600K / 14600K</option>
+                            <option value="i7-13700">Intel Core i7-13700K / 14700K</option>
+                            <option value="i9-14900">Intel Core i9-14900K</option>
+                        </optgroup>
+                        <optgroup label="AMD Ryzen">
+                            <option value="r5-3600">AMD Ryzen 5 3600 / 5600X</option>
+                            <option value="r5-7600">AMD Ryzen 5 7600 / 7600X</option>
+                            <option value="r7-7800x3d">AMD Ryzen 7 7800X3D</option>
+                            <option value="r9-7950x">AMD Ryzen 9 7950X</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="tool-box">
+                    <h3><i class="fa-solid fa-hard-drive"></i> 2. Chọn GPU muốn nâng cấp</h3>
+                    <select id="gpuSelect">
+                        <option value="">-- Chọn card đồ họa --</option>
+                        <!-- Danh sách GPU đồng bộ từ hệ thống -->
+                        <option value="1">ASUS ROG Strix GeForce RTX 4090 OC Edition</option>
+                        <option value="2">MSI GeForce RTX 4070 Ti SUPER Gaming X Slim</option>
+                        <option value="3">Gigabyte Radeon RX 7900 XTX GAMING OC</option>
+                        <option value="4">Zotac Gaming GeForce RTX 4060 Twin Edge</option>
+                        <option value="5">ASUS TUF Gaming Radeon RX 7800 XT OC</option>
+                        <option value="6">MSI GeForce RTX 4080 SUPER 16G EXPERT</option>
+                        <option value="7">Gigabyte GeForce RTX 3060 Gaming OC 12G</option>
+                        <option value="8">Colorful GeForce RTX 3050 Battle AX 8GB</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- NÚT PHÂN TÍCH -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <button class="btn-analyze" onclick="calculateBottleneck()">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Phân Tích Hiệu Năng & Nguồn Điện
+                </button>
+            </div>
+
+            <!-- KẾT QUẢ PHÂN TÍCH -->
+            <div id="analysisResult" class="analysis-card" style="display: none;">
+                <!-- Render bằng JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về GPUSTORE</h4>
+                    <p>Hệ thống bán lẻ Card màn hình (VGA) và Linh kiện máy tính chính hãng, giá rẻ nhất thị trường.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 xxxx</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@gpustore.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 GPUSTORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="./js/bottleneck.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "tt4smAEgAD4iM_3HeQXkd",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="tt4smAEgAD4iM_3HeQXkd"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+
+    
+</body>
+</html>

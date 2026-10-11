@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPUSTORE - Thế Giới Card Đồ Họa Cao Cấp</title>
+    <!-- FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Tách Riêng -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fa-solid fa-microchip"></i> GPU<span>STORE</span>
+            </a>
+
+            <!-- Ô TÌM KIẾM -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm RTX 4090, RX 7900 XT...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="nav-icons">
+                <!-- Nút So sánh card đồ họa -->
+                <a href="./sosanh.html" class="icon-btn" title="So sánh card đồ họa">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </a>
+
+                <!-- Nút Lịch sử GPU qua các năm -->
+                <a href="./thongke.html" class="icon-btn" title="Lịch sử GPU qua các năm">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+
+                <!-- Nút Kiểm tra nghẽn cổ chai & nguồn -->
+                <a href="./bottleneck.html" class="icon-btn" title="Kiểm tra nghẽn cổ chai & nguồn">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </a>
+
+                <!-- Nút Giới thiệu về GPUSTORE (About Web) -->
+                <a href="./about.html" class="icon-btn" title="Giới thiệu về website">
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
+
+                <a href="./login.html" class="icon-btn" title="Đăng nhập / Đăng ký">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <a href="./store.html" class="icon-btn" id="cartBtn" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION BANNER -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nâng Cấp Sức Mạnh <span>Đồ Họa</span> Của Bạn</h1>
+                <p>Khám phá bộ sưu tập RTX 40-Series và RX 7000-Series mới nhất với mức giá ưu đãi cùng chế độ bảo hành chính hãng lên tới 36 tháng.</p>
+                <a href="#products" class="btn-primary">Xem Sản Phẩm</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND CATEGORIES & ADVANCED FILTERS -->
+    <section class="brands container">
+        <h2 class="section-title">Thương Hiệu Nổi Bật</h2>
+        <div class="brand-grid" id="brandFilters">
+            <button class="brand-btn active" data-brand="ALL">Tất Cả</button>
+            <button class="brand-btn" data-brand="NVIDIA">NVIDIA</button>
+            <button class="brand-btn" data-brand="AMD">AMD</button>
+            <button class="brand-btn" data-brand="ASUS">ASUS</button>
+            <button class="brand-btn" data-brand="MSI">MSI</button>
+            <button class="brand-btn" data-brand="GIGABYTE">GIGABYTE</button>
+        </div>
+
+        <!-- BỘ LỌC NÂNG CAO (GIÁ & SERIES) -->
+        <div class="advanced-filters">
+            <select id="priceFilter" class="filter-select" onchange="filterProducts()">
+                <option value="ALL">Tất cả mức giá</option>
+                <option value="UNDER_10M">Dưới 10 triệu</option>
+                <option value="10M_20M">Từ 10 - 20 triệu</option>
+                <option value="20M_30M">Từ 20 - 30 triệu</option>
+                <option value="OVER_30M">Trên 30 triệu</option>
+            </select>
+
+            <select id="seriesFilter" class="filter-select" onchange="filterProducts()">
+                <option value="ALL">Tất cả dòng sản phẩm (Series)</option>
+                <option value="3050">RTX 3050</option>
+                <option value="3060">RTX 3060</option>
+                <option value="4060">RTX 4060</option>
+                <option value="4070">RTX 4070 / Ti</option>
+                <option value="4080">RTX 4080</option>
+                <option value="4090">RTX 4090</option>
+                <option value="7800">RX 7800</option>
+                <option value="7900">RX 7900</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- PRODUCT LIST -->
+    <section class="products container" id="products">
+        <h2 class="section-title">Danh Sách Card Đồ Họa</h2>
+        
+        <div class="product-grid" id="productGrid">
+            <div class="loading-spinner">
+                <i class="fa-solid fa-spinner fa-spin"></i> Đang tải dữ liệu từ máy chủ...
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về GPUSTORE</h4>
+                    <p>Hệ thống bán lẻ Card màn hình (VGA) và Linh kiện máy tính chính hãng, giá rẻ nhất thị trường.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 xxxx</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@gpustore.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 GPUSTORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT THÔNG THƯỜNG -->
+    <script src="./js/index.js"></script>
+
+    <!-- CHATBASE AI EMBED CODE -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "tt4smAEgAD4iM_3HeQXkd",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="tt4smAEgAD4iM_3HeQXkd"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>

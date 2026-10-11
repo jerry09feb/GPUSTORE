@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Sánh Card Đồ Họa - GPUSTORE</title>
+    <!-- FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Tách Riêng -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/sosanh.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fa-solid fa-microchip"></i> GPU<span>STORE</span>
+            </a>
+            <div class="nav-icons">
+                <a href="./index.html" class="icon-btn" title="Trang chủ">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+
+                <a href="./sosanh.html" class="icon-btn" title="So sánh card đồ họa">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </a>
+
+                <a href="./thongke.html" class="icon-btn" title="Lịch sử GPU qua các năm">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+
+                <a href="./bottleneck.html" class="icon-btn" title="Kiểm tra nghẽn cổ chai & nguồn">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </a>
+
+                <a href="./about.html" class="icon-btn active" title="Giới thiệu về website">
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
+
+                <a href="./store.html" class="icon-btn" id="cartBtn" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="compare-wrapper">
+            <h2 class="section-title" style="margin-bottom: 25px;">So Sánh Card Đồ Họa</h2>
+            
+            <!-- KHUNG CHỌN 2 SẢN PHẨM SO SÁNH -->
+            <div class="compare-selectors">
+                <div class="select-box">
+                    <h3>Sản Phẩm 1</h3>
+                    <select id="product1Select" onchange="updateComparison()">
+                        <option value="">-- Chọn card đồ họa 1 --</option>
+                    </select>
+                </div>
+                <div class="select-box">
+                    <h3>Sản Phẩm 2</h3>
+                    <select id="product2Select" onchange="updateComparison()">
+                        <option value="">-- Chọn card đồ họa 2 --</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- BẢNG HIỂN THỊ KẾT QUẢ SO SÁNH -->
+            <div class="compare-table-container">
+                <div id="compareResult">
+                    <div class="compare-placeholder">Vui lòng chọn 2 sản phẩm ở phía trên để bắt đầu so sánh thông số kỹ thuật.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về GPUSTORE</h4>
+                    <p>Hệ thống bán lẻ Card màn hình (VGA) và Linh kiện máy tính chính hãng, giá rẻ nhất thị trường.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 xxxx</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@gpustore.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 GPUSTORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT TÁCH RIÊNG -->
+    <script src="./js/sosanh.js"></script>
+
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "tt4smAEgAD4iM_3HeQXkd",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="tt4smAEgAD4iM_3HeQXkd"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>

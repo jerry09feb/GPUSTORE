@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký - GPUZONE</title>
+  <link rel="stylesheet" href="./css/signup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="./img/icon.png">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="./index.html">GPU<span>ZONE</span></a>
+    </div>
+    <nav>
+      <a href="./index.html">Trang chủ</a>
+      <a href="./login.html" class="btn-signup-nav">Đăng nhập</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="signup-container">
+      <form class="signup-form" id="signupForm">
+        <h2>Đăng Ký</h2>
+        <p class="subtitle">Chào mừng bạn đến đăng ký</p>
+
+        <div class="input-group">
+          <label for="fullname">Name</label>
+          <input type="text" id="fullname" placeholder="Nhập họ và tên của bạn" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="nhap email@gmail.com" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Mật khẩu</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+
+        <div class="input-group">
+          <label for="confirm-password">Nhập lại mật khẩu</label>
+          <input type="password" id="confirm-password" placeholder="••••••••" required>
+
+          <!-- Ẩn thông báo lỗi mặc định bằng display: none -->
+          <p class="error-message" id="errorMessage" style="display: none; color: #ff4757; font-size: 13px; margin-top: 5px;">Mật khẩu không trùng khớp!</p>
+        </div>
+
+        <button type="submit" class="btn-submit">Đăng Ký</button>
+
+        <p class="signup-link">
+          Bạn đã có tài khoản? <a href="./login.html">Đăng nhập ngay</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về GPUSTORE</h4>
+                    <p>Hệ thống bán lẻ Card màn hình (VGA) và Linh kiện máy tính chính hãng, giá rẻ nhất thị trường.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 xxxx</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@gpustore.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 GPUSTORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- ĐẶT THẺ SCRIPT Ở ĐÂY (TRƯỚC THẺ ĐÓNG BODY) -->
+  <script src="./js/password.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Về GPUSTORE</title>
+    <!-- FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Tổng của hệ thống -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- CSS Riêng cho trang About -->
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container navbar">
+            <a href="./index.html" class="logo">
+                <i class="fa-solid fa-microchip"></i> GPU<span>STORE</span>
+            </a>
+
+            <div class="nav-icons">
+                <a href="./index.html" class="icon-btn" title="Trang chủ">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+
+                <a href="./sosanh.html" class="icon-btn" title="So sánh card đồ họa">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </a>
+
+                <a href="./thongke.html" class="icon-btn" title="Lịch sử GPU qua các năm">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+
+                <a href="./bottleneck.html" class="icon-btn" title="Kiểm tra nghẽn cổ chai & nguồn">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </a>
+
+                <a href="./about.html" class="icon-btn active" title="Giới thiệu về website">
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
+
+                <a href="./store.html" class="icon-btn" id="cartBtn" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="about-wrapper">
+            <!-- BANNER GIỚI THIỆU -->
+            <div class="about-hero">
+                <h1>Về Chúng Tôi - <span>GPUSTORE</span></h1>
+                <p>Nền tảng thương mại điện tử chuyên sâu kết hợp công cụ phân tích phần cứng dành riêng cho cộng đồng đam mê card đồ họa.</p>
+            </div>
+
+            <!-- MỤC ĐÍCH THÀNH LẬP -->
+            <div class="about-card">
+                <h2><i class="fa-solid fa-bullseye"></i> Mục Đích Phát Triển</h2>
+                <p>
+                    Trong thời đại công nghệ phát triển nhanh chóng, việc lựa chọn một chiếc card đồ họa (GPU) phù hợp với nhu cầu chơi game, làm đồ họa hay huấn luyện AI trở nên khá phức tạp với nhiều người dùng. 
+                    <strong>GPUSTORE</strong> ra đời nhằm đơn giản hóa quá trình này bằng cách cung cấp một nền tảng minh bạch, hỗ trợ tìm kiếm, so sánh thông số kỹ thuật và tư vấn tính toán tương thích phần cứng hoàn toàn tự động.
+                </p>
+            </div>
+
+            <!-- TÍNH NĂNG NỔI BẬT -->
+            <div class="about-card">
+                <h2><i class="fa-solid fa-star"></i> Tính Năng Đột Phá</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h3>So Sánh Đa Chiều</h3>
+                        <p>Bảng so sánh chi tiết thông số kỹ thuật, kiến trúc và giá thành giữa 2 mẫu GPU bất kỳ.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <h3>Bottleneck & PSU Calculator</h3>
+                        <p>Công cụ phân tích độ nghẽn cổ chai CPU/GPU và tính toán công suất nguồn điện chính xác trước khi mua.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <h3>Lịch Sử GPU Lập Trình</h3>
+                        <p>Tra cứu những dòng card màn hình huyền thoại qua các năm, định hình ngành công nghiệp game thế giới.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SỨ MỆNH VÀ CAM KẾT -->
+            <div class="about-card">
+                <h2><i class="fa-solid fa-shield-halved"></i> Cam Kết Chất Lượng</h2>
+                <ul class="commit-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Sản phẩm chính hãng:</strong> Cung cấp thông tin và linh kiện từ các thương hiệu hàng đầu thế giới (NVIDIA, AMD, ASUS, MSI, Gigabyte,...).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Trải nghiệm tối ưu:</strong> Giao diện Dark Mode chuẩn gaming, thao tác mượt mà và trực quan trên mọi thiết bị.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Hỗ trợ kỹ thuật:</strong> Cung cấp công cụ tra cứu hoàn toàn miễn phí cho cộng đồng phần cứng Việt Nam.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về GPUSTORE</h4>
+                    <p>Hệ thống bán lẻ Card màn hình (VGA) và Linh kiện máy tính chính hãng, giá rẻ nhất thị trường.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 xxxx</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@gpustore.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 GPUSTORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT ĐỒNG BỘ GIỎ HÀNG -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedCart = localStorage.getItem("gpustore_cart");
+            const cart = savedCart ? JSON.parse(savedCart) : [];
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById("cartCount");
+            if (badge) badge.innerText = totalCount;
+        });
+    </script>
+
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "tt4smAEgAD4iM_3HeQXkd",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="tt4smAEgAD4iM_3HeQXkd"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>

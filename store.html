@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng - GPUZONE</title>
+  <!-- CSS dùng chung và CSS giỏ hàng -->
+  <link rel="stylesheet" href="./css/store.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="./img/icon.png">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="./index.html">GPU<span>ZONE</span></a>
+    </div>
+    <nav>
+      <a href="./index.html"><i class="fa-solid fa-arrow-left"></i> Tiếp tục mua sắm</a>
+      <div class="cart-icon-nav">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge" id="cartBadge">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="cart-wrapper">
+      <h1 class="page-title"><i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng Của Bạn</h1>
+
+      <div class="cart-grid">
+        <!-- CỘT TRÁI: DANH SÁCH SẢN PHẨM & FORM GIAO HÀNG -->
+        <div class="cart-left">
+          <!-- Danh sách sản phẩm -->
+          <div class="cart-card">
+            <h2>Sản phẩm đã chọn (<span id="totalItemsCount">0</span>)</h2>
+            <div class="cart-items" id="cartItemsContainer">
+              <!-- Sản phẩm được render tự động bằng JavaScript ở đây -->
+            </div>
+          </div>
+
+          <!-- Form thông tin giao hàng -->
+          <div class="cart-card">
+            <h2><i class="fa-solid fa-truck-fast"></i> Thông Tin Giao Hàng</h2>
+            <form id="checkoutForm">
+              <div class="input-group">
+                <label for="fullname">Họ và tên *</label>
+                <input type="text" id="fullname" placeholder="Nguyễn Văn A" required>
+              </div>
+
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="phone">Số điện thoại *</label>
+                  <input type="tel" id="phone" placeholder="0901234567" required>
+                </div>
+                <div class="input-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" placeholder="example@gmail.com">
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="address">Địa chỉ nhận hàng *</label>
+                <input type="text" id="address" placeholder="Số nhà, tên đường, phường/xã, quận/huyện..." required>
+              </div>
+
+              <div class="input-group">
+                <label>Phương thức thanh toán</label>
+                <div class="payment-options">
+                  <label class="payment-item">
+                    <input type="radio" name="payment" value="COD" checked>
+                    <span><i class="fa-solid fa-money-bill-wave"></i> Thanh toán khi nhận hàng (COD)</span>
+                  </label>
+                  <label class="payment-item">
+                    <input type="radio" name="payment" value="BANK">
+                    <span><i class="fa-solid fa-qrcode"></i> Chuyển khoản QR Code</span>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI: TÓM TẮT ĐƠN HÀNG -->
+        <div class="cart-right">
+          <div class="cart-card summary-card">
+            <h2>Tóm Tắt Đơn Hàng</h2>
+
+            <!-- Nhập Mã Giảm Giá -->
+            <div class="coupon-box">
+              <input type="text" id="couponInput" placeholder="Mã giảm giá">
+              <button type="button" id="applyCouponBtn">Áp dụng</button>
+            </div>
+            <p id="couponMsg" class="coupon-msg"></p>
+
+            <!-- Bảng Giá -->
+            <div class="summary-list">
+              <div class="summary-row">
+                <span>Tạm tính</span>
+                <span id="subtotalPrice">0₫</span>
+              </div>
+              <div class="summary-row">
+                <span>Giảm giá</span>
+                <span id="discountPrice" class="discount-val">-0₫</span>
+              </div>
+              <div class="summary-row">
+                <span>Phí vận chuyển</span>
+                <span id="shippingPrice">Miễn phí</span>
+              </div>
+              <hr class="summary-divider">
+              <div class="summary-row total-row">
+                <span>Tổng tiền</span>
+                <span id="totalPrice" class="total-val">0₫</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-submit btn-checkout" id="checkoutBtn">
+              <i class="fa-solid fa-shield-halved"></i> ĐẶT HÀNG NGAY
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về GPUSTORE</h4>
+                    <p>Hệ thống bán lẻ Card màn hình (VGA) và Linh kiện máy tính chính hãng, giá rẻ nhất thị trường.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ Khách Hàng</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Phương thức thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, Quận 1, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 1900 xxxx</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@gpustore.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 GPUSTORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="./js/store.js"></script>
+
+  <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "tt4smAEgAD4iM_3HeQXkd",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="tt4smAEgAD4iM_3HeQXkd"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>
