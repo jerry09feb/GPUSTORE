@@ -1,25 +1,46 @@
-/* === CSS CHO TRANG CÔNG CỤ BOTTLEECK & PSU (STICKY FOOTER) === */
+/* === CSS CHO TRANG CÔNG CỤ BOTTLENECK & PSU === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0b0f0d 0%, #132215 50%, #0f1711 100%);
+    color: #f3f4f6;
+    -webkit-font-smoothing: antialiased;
 }
 
 .main-content {
     flex: 1;
     padding: 40px 8%;
+    width: 100%;
 }
 
 .tool-wrapper {
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .tool-subtitle {
     color: #9ca3af;
-    font-size: 14px;
+    font-size: clamp(13px, 2.2vw, 14px);
     margin-bottom: 25px;
+    line-height: 1.5;
 }
 
 .tool-grid-selectors {
@@ -38,7 +59,7 @@ body {
 }
 
 .tool-box h3 {
-    font-size: 15px;
+    font-size: clamp(14px, 2.5vw, 15px);
     color: #ffffff;
     margin-bottom: 12px;
     display: flex;
@@ -48,11 +69,12 @@ body {
 
 .tool-box h3 i {
     color: #76b900;
+    flex-shrink: 0;
 }
 
 .tool-box select {
     width: 100%;
-    padding: 12px;
+    padding: 12px 14px;
     background-color: #0b0f0d;
     border: 1px solid #213824;
     border-radius: 8px;
@@ -60,6 +82,12 @@ body {
     font-size: 14px;
     outline: none;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
 }
 
 .tool-box select:focus {
@@ -73,11 +101,12 @@ body {
     border: none;
     padding: 14px 30px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: clamp(14px, 2.5vw, 16px);
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(118, 185, 0, 0.4);
     transition: opacity 0.2s ease, transform 0.1s ease;
+    display: inline-block;
 }
 
 .btn-analyze:hover {
@@ -103,7 +132,7 @@ body {
 }
 
 .analysis-header {
-    font-size: 20px;
+    font-size: clamp(17px, 3vw, 20px);
     color: #ffffff;
     font-weight: bold;
     margin-bottom: 20px;
@@ -116,6 +145,7 @@ body {
 
 .analysis-header i {
     color: #76b900;
+    flex-shrink: 0;
 }
 
 .result-row {
@@ -134,24 +164,27 @@ body {
 
 .result-box h4 {
     color: #9ca3af;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     margin-bottom: 8px;
 }
 
 .result-value {
-    font-size: 22px;
+    font-size: clamp(18px, 4vw, 22px);
     font-weight: bold;
     color: #76b900;
+    word-break: break-word;
 }
 
 .result-desc {
-    font-size: 13px;
+    font-size: clamp(12px, 2vw, 13px);
     color: #d1d5db;
     margin-top: 8px;
     line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-/* Footer bám đáy */
+/* Footer */
 footer {
     width: 100%;
     margin-top: auto;
@@ -160,11 +193,235 @@ footer {
     padding: 20px 0;
 }
 
-@media (max-width: 768px) {
+/* =========================================
+   RESPONSIVE – TỐI ƯU MỌI THIẾT BỊ
+   ========================================= */
+
+/* Desktop lớn */
+@media screen and (min-width: 1200px) {
+    .main-content {
+        padding: 50px 10%;
+    }
+
+    .tool-wrapper {
+        max-width: 1100px;
+    }
+}
+
+/* Laptop / Tablet ngang */
+@media screen and (max-width: 1024px) {
+    .main-content {
+        padding: 32px 5%;
+    }
+
+    .tool-grid-selectors,
+    .result-row {
+        gap: 16px;
+    }
+}
+
+/* Tablet dọc & Mobile lớn */
+@media screen and (max-width: 768px) {
+    .main-content {
+        padding: 20px 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tool-wrapper {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .tool-subtitle {
+        margin-bottom: 16px;
+        font-size: 13px;
+    }
+
+    /* 2 cột → 1 cột */
     .tool-grid-selectors {
         grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
     }
+
+    .tool-box {
+        padding: 16px;
+        width: 100%;
+    }
+
+    .tool-box h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .tool-box select {
+        padding: 12px 14px;
+        padding-right: 36px;
+        font-size: 14px;
+    }
+
+    /* Nút full-width, dễ bấm */
+    .btn-analyze {
+        width: 100%;
+        display: block;
+        padding: 14px 16px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .analysis-card {
+        padding: 20px 16px;
+        width: 100%;
+        border-radius: 14px;
+    }
+
+    .analysis-header {
+        font-size: 17px;
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
     .result-row {
         grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .result-box {
+        padding: 16px;
+        width: 100%;
+    }
+
+    .result-value {
+        font-size: 20px;
+    }
+
+    footer {
+        padding: 16px;
+        width: 100%;
+    }
+
+    footer p,
+    footer li,
+    footer a,
+    .tool-subtitle,
+    .result-desc {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 100%;
+    }
+}
+
+/* Điện thoại vừa */
+@media screen and (max-width: 480px) {
+    .main-content {
+        padding: 16px 12px;
+    }
+
+    .tool-subtitle {
+        margin-bottom: 14px;
+        font-size: 12.5px;
+    }
+
+    .tool-box {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .tool-box h3 {
+        font-size: 13.5px;
+        margin-bottom: 8px;
+        gap: 6px;
+    }
+
+    .tool-box select {
+        padding: 11px 12px;
+        padding-right: 34px;
+        font-size: 13.5px;
+    }
+
+    .btn-analyze {
+        padding: 13px 14px;
+        font-size: 14.5px;
+        border-radius: 8px;
+    }
+
+    .analysis-card {
+        padding: 16px 14px;
+        border-radius: 12px;
+    }
+
+    .analysis-header {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .result-box {
+        padding: 14px;
+        border-radius: 8px;
+    }
+
+    .result-value {
+        font-size: 18px;
+    }
+
+    .result-desc {
+        font-size: 12.5px;
+    }
+
+    footer {
+        padding: 14px 12px;
+    }
+}
+
+/* Điện thoại nhỏ */
+@media screen and (max-width: 360px) {
+    .main-content {
+        padding: 12px 10px;
+    }
+
+    .tool-box {
+        padding: 12px;
+    }
+
+    .tool-box h3 {
+        font-size: 13px;
+    }
+
+    .tool-box select {
+        padding: 10px 12px;
+        padding-right: 32px;
+        font-size: 13px;
+    }
+
+    .btn-analyze {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .analysis-card {
+        padding: 14px 12px;
+    }
+
+    .analysis-header {
+        font-size: 15px;
+    }
+
+    .result-box {
+        padding: 12px;
+    }
+
+    .result-value {
+        font-size: 17px;
+    }
+
+    footer {
+        padding: 12px 10px;
     }
 }

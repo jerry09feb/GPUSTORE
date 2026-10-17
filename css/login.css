@@ -1,17 +1,24 @@
-/* Reset cơ bản */
-* {
-  margin: 0;
-  padding: 0;
+/* Sửa triệt để lỗi cuộn và đẩy footer xuống đáy */
+html {
+  height: 100%;
+  overflow-y: auto;
   box-sizing: border-box;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   background: linear-gradient(135deg, #0b0f0d 0%, #132215 50%, #0f1711 100%);
   color: #f3f4f6;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -78,11 +85,11 @@ a {
 
 /* ================= PHẦN THÂN (CANH GIỮA FORM) ================= */
 .main-content {
-  flex: 1;
+  flex: 1 0 auto; /* Đảm bảo đẩy footer xuống đáy hoàn hảo */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .login-container,
@@ -192,35 +199,169 @@ a {
   opacity: 0.85;
 }
 
-/* ================= FOOTER ================= */
+/* ========== FOOTER ========== */
+footer,
 .footer {
-  background-color: rgba(11, 15, 13, 0.95);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px 8%;
-  margin-top: auto;
+  width: 100%;
+  background-color: #090a0d;
   border-top: 1px solid #1f3322;
+  padding: 48px 8% 28px;
+  margin-top: auto;
+  color: #9ca3af;
+  font-size: 14px;
 }
 
+/* 3 cột ngang – tự xuống hàng khi thiếu chỗ */
+.footer-grid,
+footer .container,
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  color: #9ca3af;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 48px;
+  max-width: 1100px;
+  margin: 0 auto 32px;
+  align-items: start;
 }
 
-.footer-links a {
-  margin-left: 15px;
-  color: #9ca3af;
-  transition: color 0.25s ease;
+.footer-col h4,
+footer h4 {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  white-space: nowrap; /* Tiêu đề không bị xuống dòng */
 }
 
-.footer-links a:hover {
+.footer-col p,
+footer p {
+  color: #9ca3af;
+  line-height: 1.65;
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.footer-col ul,
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li,
+footer ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-col a,
+footer a,
+.footer a {
+  color: #9ca3af !important;
+  text-decoration: none !important;
+  font-size: 13.5px;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover,
+footer a:hover,
+.footer a:hover {
+  color: #76b900 !important;
+}
+
+.footer-col li i,
+footer li i {
   color: #76b900;
+  margin-right: 8px;
+  width: 16px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Copyright luôn full-width, nằm dưới */
+.copyright,
+footer .copyright,
+.footer-bottom {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #1f3322;
+  font-size: 13px;
+  color: #6b7280;
+  max-width: 1100px;
+  margin: 0 auto;
+  clear: both;
+}
+
+/* =========================================
+   RESPONSIVE FOOTER
+   ========================================= */
+
+/* Tablet: vẫn 3 cột nhưng thu gap */
+@media screen and (max-width: 1024px) {
+  footer,
+  .footer {
+    padding: 40px 5% 24px;
+  }
+
+  .footer-grid,
+  footer .container,
+  .footer-content {
+    gap: 28px 32px;
+  }
+}
+
+/* Dưới 900px: chuyển 1 cột (tránh chữ bị bóp) */
+@media screen and (max-width: 900px) {
+  .footer-grid,
+  footer .container,
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+
+  .footer-col h4,
+  footer h4 {
+    white-space: normal;
+    margin-bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  footer,
+  .footer {
+    padding: 32px 4% 20px;
+  }
+
+  .footer-grid,
+  footer .container,
+  .footer-content {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .footer-col h4,
+  footer h4 {
+    font-size: 14.5px;
+  }
+
+  .footer-col p,
+  footer p,
+  .footer-col a,
+  footer a {
+    font-size: 13px;
+  }
+
+  .copyright,
+  .footer-bottom {
+    font-size: 12.5px;
+    padding-top: 18px;
+  }
 }
 
 /* ================= RESPONSIVE ================= */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   .navbar {
     flex-direction: column;
     padding: 15px 5%;
@@ -238,18 +379,26 @@ a {
     margin-left: 0;
     font-size: 14px;
   }
+}
 
-  .footer {
-    padding: 20px 5%;
+@media screen and (max-width: 768px) {
+  .main-content {
+    align-items: flex-start;
+    padding: 30px 16px 40px 16px;
   }
 
-  .footer-content {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .footer-links a {
-    margin: 0 8px;
+  .footer, footer {
+    padding: 30px 5% 25px 5%;
+  }
+
+  .login-container,
+  .auth-container {
+    padding: 25px 20px;
+    margin-top: 10px;
   }
 }

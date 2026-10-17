@@ -1,19 +1,31 @@
 /* === CSS CHO TRANG GIỚI THIỆU (about.css) === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    background: linear-gradient(135deg, #0b0f0d 0%, #132215 50%, #0f1711 100%);
+    color: #f3f4f6;
+    -webkit-font-smoothing: antialiased;
 }
 
 .main-content {
     flex: 1;
     padding: 40px 8%;
+    width: 100%;
 }
 
 .about-wrapper {
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .about-hero {
@@ -22,9 +34,10 @@ body {
 }
 
 .about-hero h1 {
-    font-size: 32px;
+    font-size: clamp(22px, 5vw, 32px);
     color: #ffffff;
     margin-bottom: 12px;
+    line-height: 1.3;
 }
 
 .about-hero h1 span {
@@ -33,7 +46,7 @@ body {
 
 .about-hero p {
     color: #9ca3af;
-    font-size: 16px;
+    font-size: clamp(13px, 2.5vw, 16px);
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
@@ -49,7 +62,7 @@ body {
 }
 
 .about-card h2 {
-    font-size: 20px;
+    font-size: clamp(17px, 3vw, 20px);
     color: #ffffff;
     margin-bottom: 18px;
     display: flex;
@@ -59,11 +72,12 @@ body {
 
 .about-card h2 i {
     color: #76b900;
+    flex-shrink: 0;
 }
 
 .about-card p {
     color: #d1d5db;
-    font-size: 15px;
+    font-size: clamp(13px, 2.2vw, 15px);
     line-height: 1.7;
 }
 
@@ -119,7 +133,7 @@ body {
 
 .commit-list li {
     color: #d1d5db;
-    font-size: 15px;
+    font-size: clamp(13px, 2.2vw, 15px);
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -129,6 +143,7 @@ body {
 .commit-list li i {
     color: #76b900;
     margin-top: 4px;
+    flex-shrink: 0;
 }
 
 /* FOOTER BÁM ĐÁY */
@@ -140,8 +155,143 @@ footer {
     padding: 20px 0;
 }
 
-@media (max-width: 768px) {
+/* =========================================
+   RESPONSIVE - THÍCH ỨNG MỌI THIẾT BỊ
+   ========================================= */
+
+/* Màn hình lớn (Desktop lớn - trên 1200px) */
+@media screen and (min-width: 1200px) {
+    .main-content {
+        padding: 50px 10%;
+    }
+
+    .about-wrapper {
+        max-width: 1100px;
+    }
+}
+
+/* Máy tính bảng ngang / Laptop nhỏ (dưới 1024px) */
+@media screen and (max-width: 1024px) {
+    .main-content {
+        padding: 35px 5%;
+    }
+
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Tablet dọc & điện thoại lớn (dưới 768px) */
+@media screen and (max-width: 768px) {
+    .main-content {
+        padding: 28px 4.5%;
+    }
+
+    .about-hero {
+        margin-bottom: 30px;
+    }
+
+    .about-card {
+        padding: 22px 18px;
+        margin-bottom: 22px;
+        border-radius: 14px;
+    }
+
+    .about-card h2 {
+        margin-bottom: 14px;
+        gap: 8px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* 1 cột trên mobile */
+        gap: 14px;
+    }
+
+    .feature-item {
+        padding: 18px 16px;
+    }
+
+    .feature-item:hover {
+        transform: none; /* Tắt hover lift trên mobile để tránh giật */
+    }
+
+    .feature-item i {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .feature-item h3 {
+        font-size: 15px;
+    }
+
+    .commit-list {
+        gap: 12px;
+    }
+
+    .commit-list li {
+        gap: 10px;
+    }
+}
+
+/* Điện thoại vừa & nhỏ (dưới 480px) */
+@media screen and (max-width: 480px) {
+    .main-content {
+        padding: 20px 4%;
+    }
+
+    .about-hero {
+        margin-bottom: 24px;
+    }
+
+    .about-card {
+        padding: 18px 14px;
+        margin-bottom: 18px;
+        border-radius: 12px;
+    }
+
+    .about-card h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .feature-item {
+        padding: 16px 14px;
+    }
+
+    .feature-item i {
+        font-size: 24px;
+    }
+
+    .feature-item h3 {
+        font-size: 14.5px;
+    }
+
+    .feature-item p {
+        font-size: 12.5px;
+    }
+
+    footer {
+        padding: 16px 0;
+    }
+}
+
+/* Màn hình rất nhỏ (dưới 360px) */
+@media screen and (max-width: 360px) {
+    .main-content {
+        padding: 16px 3.5%;
+    }
+
+    .about-card {
+        padding: 15px 12px;
+    }
+
+    .about-card h2 {
+        font-size: 15px;
+        flex-wrap: wrap;
+    }
+
+    .feature-item {
+        padding: 14px 12px;
     }
 }
